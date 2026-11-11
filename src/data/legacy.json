@@ -1,0 +1,1439 @@
+{
+ "E26": {
+  "id": "eurotrip-2026",
+  "name": "Eurotrip 2026",
+  "status": "Concluída",
+  "start": "2026-05-15",
+  "end": "2026-05-31",
+  "cities": [
+   "Madri",
+   "Londres",
+   "Paris",
+   "Costa Amalfitana",
+   "Roma"
+  ],
+  "visited": [
+   "Madri",
+   "Londres",
+   "Paris",
+   "Nápoles",
+   "Sorrento",
+   "Positano",
+   "Capri",
+   "Roma",
+   "Florença"
+  ],
+  "countries": [
+   "724",
+   "826",
+   "250",
+   "380"
+  ],
+  "route": [
+   "mad",
+   "lon",
+   "par",
+   "nap",
+   "sor",
+   "rom"
+  ],
+  "side": [
+   [
+    "rom",
+    "flo"
+   ]
+  ],
+  "pts": [
+   "mad",
+   "lon",
+   "par",
+   "nap",
+   "sor",
+   "rom",
+   "flo"
+  ],
+  "budget": "Valor diário para gastar: € 100. Não esquecer de fazer o Tax Free na volta.",
+  "transport": [
+   {
+    "d": "2026-05-15",
+    "a": "Rio",
+    "b": "Madri",
+    "mode": "Avião",
+    "t": "15:35 → 10:05 (16/05)"
+   },
+   {
+    "d": "2026-05-18",
+    "a": "Madri",
+    "b": "Londres",
+    "mode": "Avião",
+    "t": "15:00 → 16:25"
+   },
+   {
+    "d": "2026-05-21",
+    "a": "Londres",
+    "b": "Paris",
+    "mode": "Eurostar",
+    "t": "07:31 → 10:59"
+   },
+   {
+    "d": "2026-05-24",
+    "a": "Paris",
+    "b": "Nápoles",
+    "mode": "Avião",
+    "t": "06:15 → 08:30"
+   },
+   {
+    "d": "2026-05-24",
+    "a": "Nápoles",
+    "b": "Sorrento",
+    "mode": "Ferry",
+    "t": "13:00 → 13:45"
+   },
+   {
+    "d": "2026-05-27",
+    "a": "Sorrento",
+    "b": "Nápoles",
+    "mode": "Ferry",
+    "t": "10:00 → 10:45"
+   },
+   {
+    "d": "2026-05-27",
+    "a": "Nápoles",
+    "b": "Roma",
+    "mode": "Trem",
+    "t": "12:10 → 13:20"
+   },
+   {
+    "d": "2026-05-29",
+    "a": "Roma Tiburtina",
+    "b": "Florença",
+    "mode": "Trem",
+    "t": "08:05 → 09:31"
+   },
+   {
+    "d": "2026-05-29",
+    "a": "Firenze S.M. Novella",
+    "b": "Roma",
+    "mode": "Trem",
+    "t": "19:28 → 20:54"
+   },
+   {
+    "d": "2026-05-31",
+    "a": "Roma (Fiumicino)",
+    "b": "Rio",
+    "mode": "Avião",
+    "t": "13:05 → 23:30"
+   }
+  ],
+  "stays": [
+   {
+    "city": "Madri",
+    "dates": "16 a 18/05",
+    "name": "Airbnb na Ronda de Atocha",
+    "info": [
+     [
+      "Check-in",
+      "14h"
+     ],
+     [
+      "Chegada",
+      "entre 11h e 12h, Aeroporto de Barajas (cerca de 1h13 de transporte público)"
+     ],
+     [
+      "Check-out",
+      "10h"
+     ],
+     [
+      "Partida",
+      "15h, Aeroporto de Barajas (chegar com antecedência)"
+     ]
+    ]
+   },
+   {
+    "city": "Londres",
+    "dates": "18 a 21/05",
+    "name": "Keystone House",
+    "q": "Keystone House, 6 Caledonian Road, London",
+    "info": [
+     [
+      "Endereço",
+      "6 Caledonian Road, Islington, N1 9DU"
+     ],
+     [
+      "Check-in",
+      "15h"
+     ],
+     [
+      "Chegada",
+      "17h, London Gatwick (cerca de 1h04 de transporte público)"
+     ],
+     [
+      "Check-out",
+      "11h"
+     ],
+     [
+      "Partida",
+      "07:31, St Pancras International (ao lado da hospedagem)"
+     ]
+    ]
+   },
+   {
+    "city": "Paris",
+    "dates": "21 a 24/05",
+    "name": "Airbnb na Avenue de Villiers (17º arr.)",
+    "info": [
+     [
+      "Check-in",
+      "15h"
+     ],
+     [
+      "Chegada",
+      "10:59, Gare du Nord (cerca de 15 min de transporte público)"
+     ],
+     [
+      "Check-out",
+      "11h"
+     ],
+     [
+      "Partida",
+      "06:15, Aeroporto de Orly (cerca de 40 min, sair muito cedo)"
+     ]
+    ]
+   },
+   {
+    "city": "Sorrento",
+    "dates": "24 a 27/05",
+    "name": "Ostello Le Sirene",
+    "q": "Ostello Le Sirene, Via degli Aranci 154, Sorrento",
+    "info": [
+     [
+      "Endereço",
+      "Via degli Aranci 154, Sorrento"
+     ],
+     [
+      "Check-in",
+      "15:30"
+     ],
+     [
+      "Chegada",
+      "08:30, Aeroporto de Nápoles (cerca de 37 min até o porto do ferry)"
+     ],
+     [
+      "Check-out",
+      "10h"
+     ],
+     [
+      "Partida",
+      "12:10, Napoli Centrale"
+     ]
+    ]
+   },
+   {
+    "city": "Roma",
+    "dates": "27 a 31/05",
+    "name": "Airbnb na Viale di Trastevere",
+    "info": [
+     [
+      "Check-in",
+      "14h"
+     ],
+     [
+      "Chegada",
+      "13:20, Roma Termini (cerca de 31 min de transporte público)"
+     ],
+     [
+      "Check-out",
+      "10h"
+     ],
+     [
+      "Partida",
+      "13:05, Aeroporto de Fiumicino"
+     ]
+    ]
+   }
+  ],
+  "checklist": [
+   {
+    "g": "Antes da viagem",
+    "items": [
+     [
+      "Seguro viagem",
+      1
+     ],
+     [
+      "Chip de celular"
+     ],
+     [
+      "ETA (Londres)"
+     ],
+     [
+      "Levar foto 3x4 (alguns passes pedem)"
+     ]
+    ]
+   },
+   {
+    "g": "Ingressos para comprar com antecedência",
+    "items": [
+     [
+      "Santiago Bernabéu",
+      1
+     ],
+     [
+      "Studio Warner",
+      1
+     ],
+     [
+      "Passeio de barco pelo Rio Sena",
+      1
+     ],
+     [
+      "Vaticano",
+      1
+     ],
+     [
+      "Passeio de barco em Capri",
+      1
+     ],
+     [
+      "Coliseu, Fórum Romano e Palatino",
+      1
+     ],
+     [
+      "Cooking class",
+      1
+     ],
+     [
+      "Museu de Orsay"
+     ],
+     [
+      "Louvre (abre com 90 dias)"
+     ],
+     [
+      "Ópera Garnier"
+     ]
+    ]
+   },
+   {
+    "g": "Reservar com antecedência",
+    "items": [
+     [
+      "Sky Bar em Londres"
+     ],
+     [
+      "Notre-Dame em Paris"
+     ],
+     [
+      "Restaurante Bouillon Julien em Paris",
+      1
+     ]
+    ]
+   },
+   {
+    "g": "Na volta",
+    "items": [
+     [
+      "Fazer o Tax Free"
+     ]
+    ]
+   }
+  ],
+  "apps": [
+   [
+    "Bolt",
+    "tipo Uber"
+   ],
+   [
+    "The Fork",
+    "descontos em restaurantes"
+   ],
+   [
+    "Bounce",
+    "guardar malas na Itália"
+   ],
+   [
+    "City Locker",
+    "guardar malas em Paris"
+   ],
+   [
+    "GoCity",
+    "passes para atrações"
+   ]
+  ],
+  "tips": [
+   {
+    "city": "Londres",
+    "t": "Fotos clássicas",
+    "items": [
+     "Westminster Bridge (lado oposto): atravesse a ponte em direção ao London Eye. A vista é frontal e dá para esperar um ônibus vermelho de dois andares passar.",
+     "Ângulo secreto na ponte: do lado do Big Ben, atravesse, vire à direita e desça a escada. Siga reto e vire à direita de novo até um túnel com vista limpa do Big Ben e do Parlamento.",
+     "Perto do Parlamento: caminhe pela margem do rio, no sentido oposto à ponte, até a vista com as cabines telefônicas vermelhas em primeiro plano."
+    ]
+   },
+   {
+    "city": "Paris",
+    "t": "Fotos com a Torre",
+    "items": [
+     "Avenue de Camoëns",
+     "Pont d'Iéna",
+     "Rue Buenos-Ayres",
+     "Rue de l'Université",
+     "Trocadéro",
+     "Passerelle Debilly",
+     "Rue de Monttessuy",
+     "28 Rue du Bac: espelho na rua para fotos"
+    ]
+   },
+   {
+    "city": "Paris",
+    "t": "Gastronomia",
+    "items": [
+     "Crepe (Au P'tit Grec)",
+     "Pain au chocolat na La Boulangerie Moderne (16 Rue des Fossés Saint-Jacques), a padaria de Emily in Paris",
+     "Sopa de cebola no restaurante Jacobine",
+     "Croissant de qualquer lugar",
+     "Crème brûlée",
+     "Baguete para o piquenique",
+     "Macarons da Ladurée e da Pierre Hermé",
+     "Carette para tomar café",
+     "Bouillons: os restaurantes mais baratos",
+     "Comprar pizza e vinho e fazer piquenique embaixo da torre",
+     "Monoprix: comidinhas de mercado e lugar para esquentar e comer, para gastar pouco"
+    ]
+   },
+   {
+    "city": "Paris",
+    "t": "Dicas",
+    "items": [
+     "Rue de Turenne: brechós e cafés",
+     "Ir na pharmacie ou Citypharma",
+     "Picard: supermercado barato de comidas congeladas",
+     "Loja Normal: 74 Rue de Rivoli e Rue Saint-Lazare"
+    ]
+   },
+   {
+    "city": "Roma",
+    "t": "Lugares para foto e cantos escondidos",
+    "items": [
+     "Oppio Caffè, do outro lado da rua do Coliseu",
+     "Buraco da fechadura da Ordem de Malta (Aventino): dá para ver a cúpula do Vaticano",
+     "Fontana dell'Acqua Paola"
+    ]
+   },
+   {
+    "city": "Roma",
+    "t": "Onde comer",
+    "items": [
+     "Osteria da Fortunata",
+     "Pastasciutta (perto do Vaticano, famosa e barata)",
+     "Forno Campo de' Fiori (cornetto de pistache)",
+     "Pastificio Guerra: massa a € 4,50"
+    ]
+   },
+   {
+    "city": "Itália",
+    "t": "Comidas para provar",
+    "items": [
+     "Carbonara e fettuccine Alfredo em Roma",
+     "Pizza napolitana em Nápoles",
+     "Massa trufada em Florença",
+     "Massa ao limone e delizia al limone na Costa Amalfitana",
+     "All'Antico Vinaio: sanduíche enorme",
+     "Arancini, cannoli, tiramisù, gelato, molho pesto",
+     "Aperitivo: no fim da tarde, pedir um Aperol que vem com petiscos"
+    ]
+   }
+  ],
+  "days": [
+   {
+    "d": "2026-05-15",
+    "city": "Rio",
+    "title": "Embarque",
+    "note": "Voo para Madri às 15:35.",
+    "places": []
+   },
+   {
+    "d": "2026-05-16",
+    "city": "Madri",
+    "q": "Madrid",
+    "title": "Centro histórico e Gran Vía",
+    "places": [
+     [
+      "Museo Reina Sofía",
+      "€ 12. Fica em frente ao nosso Airbnb."
+     ],
+     [
+      "Puerta del Sol",
+      "Gratuito. Marco zero da Espanha."
+     ],
+     [
+      "Plaza Mayor",
+      "Gratuito. No centro, a poucos metros da Puerta del Sol e da Plaza de la Villa."
+     ],
+     [
+      "Mercado de San Miguel",
+      "Gratuito. Vale a visita mesmo que não coma nada."
+     ],
+     [
+      "Plaza de la Villa",
+      "Gratuito."
+     ],
+     [
+      "Plaza de Oriente",
+      "Gratuito."
+     ],
+     [
+      "Catedral de la Almudena",
+      "Catedral e cripta com acesso livre. Museu e subida à cúpula: cerca de € 6. Aberta geralmente das 10h às 20h. Primeira catedral consagrada fora de Roma."
+     ],
+     [
+      "Palácio Real de Madri",
+      "Ingresso comum € 14. Não vamos entrar, só fotos do lado de fora. Entrada gratuita de segunda a quinta, das 17h às 19h (abril a setembro): verificar se dá para tentar no dia 18/05.",
+      "Palacio Real de Madrid"
+     ],
+     [
+      "Jardins do Palácio Real",
+      "Gratuito.",
+      "Jardines del Palacio Real, Madrid"
+     ],
+     [
+      "Templo de Debod",
+      "Gratuito. Pôr do sol em torno das 22h: verificar se vale a pena ir."
+     ],
+     [
+      "Plaza de España",
+      "Gratuito."
+     ],
+     [
+      "Gran Vía à noite",
+      "Gratuito. Ir nas principais lojas (Kiko, Primark, Zara).",
+      "Gran Vía, Madrid"
+     ],
+     [
+      "El Corte Inglés (rooftop)",
+      "Rooftop gratuito: Gourmet Experience, entrada gratuita.",
+      "El Corte Inglés Callao Gourmet Experience, Madrid"
+     ]
+    ],
+    "eat": [
+     [
+      "Cañas y Tapas",
+      "12 min andando dos Jardins do Retiro."
+     ],
+     [
+      "Chocolatería San Ginés",
+      "Churros com chocolate."
+     ],
+     [
+      "The Hundred",
+      "O melhor hambúrguer do mundo.",
+      "Hundred Burgers, Madrid"
+     ]
+    ]
+   },
+   {
+    "d": "2026-05-17",
+    "city": "Madri",
+    "q": "Madrid",
+    "title": "Bernabéu, Prado e Retiro",
+    "places": [
+     [
+      "Tour Santiago Bernabéu",
+      "Horário: 10h. Duração: 1h30.",
+      "Estadio Santiago Bernabéu, Madrid"
+     ],
+     [
+      "Museu do Prado",
+      "Gratuito de segunda a sábado das 18h às 20h e domingo das 17h às 19h. 14 min andando do Airbnb.",
+      "Museo del Prado, Madrid"
+     ],
+     [
+      "Jardins do Retiro",
+      "2 min do Museu do Prado.",
+      "Parque de El Retiro, Madrid"
+     ],
+     [
+      "Puerta de Alcalá",
+      "Gratuito. Para tirar foto."
+     ],
+     [
+      "La Latina",
+      "Rua de tapas.",
+      "La Latina, Madrid"
+     ],
+     [
+      "Rooftop",
+      "Opções: 360º Riu Rooftop (Maestro Guerrero s/n), Sky 44 Bar (entrada gratuita), Picalagartos Sky Bar (Gran Vía 21), Gourmet Experience do El Corte Inglés (gratuito).",
+      "Hotel Riu Plaza España, Madrid"
+     ]
+    ],
+    "eat": [
+     [
+      "Five Guys",
+      ""
+     ],
+     [
+      "Focacciamo",
+      ""
+     ],
+     [
+      "MadRolls Cinnamon Rolls",
+      ""
+     ],
+     [
+      "100 Montaditos",
+      "Muito barato. Quarta e domingo tem promoção: montaditos por € 1."
+     ]
+    ]
+   },
+   {
+    "d": "2026-05-18",
+    "city": "Londres",
+    "q": "London",
+    "title": "Chegada, Soho e Tower Bridge",
+    "note": "Check-out em Madri às 10h. Voo às 15h, chegada em Gatwick às 16:25.",
+    "places": [
+     [
+      "Estação King's Cross",
+      "Ao lado da hospedagem. Dá para deixar para o último dia.",
+      "King's Cross Station, London"
+     ],
+     [
+      "Piccadilly Circus",
+      "Metrô direto. Comer no Shake Shack da Leicester Square ou ir direto para Canary Wharf, a depender da hora."
+     ],
+     [
+      "Loja M&M's",
+      "Se estiver aberta. Se não, passar outro dia.",
+      "M&M's World London"
+     ],
+     [
+      "Soho e Chinatown",
+      "Passeio livre. Carnaby Street (estátua do John Lennon) e Oxford Street (Primark).",
+      "Chinatown, London"
+     ],
+     [
+      "The Garden at 120",
+      "Gratuito, sem reserva. Jardim suspenso perto da Tower Bridge e do Sky Garden. Em maio fecha às 21h: verificar."
+     ],
+     [
+      "Sky Garden",
+      "Gratuito. Reservar com 3 semanas de antecedência: as reservas abrem às segundas, a partir das 10h. Ver o pôr do sol se não estiver chovendo (em maio, entre 20h50 e 21h10)."
+     ],
+     [
+      "Tower Bridge à noite",
+      "",
+      "Tower Bridge, London"
+     ]
+    ],
+    "eat": [
+     [
+      "Five Guys (More London Place)",
+      "Com vista para a Tower Bridge. Tentar almoçar lá após o passeio.",
+      "Five Guys, More London Place, London"
+     ],
+     [
+      "Shake Shack Leicester Square",
+      "1-2 Coventry St, W1D 6BH."
+     ],
+     [
+      "Covent Garden",
+      ""
+     ]
+    ]
+   },
+   {
+    "d": "2026-05-19",
+    "city": "Londres",
+    "q": "London",
+    "title": "Harry Potter, Westminster e City",
+    "places": [
+     [
+      "Warner Bros. Studio Tour (Harry Potter)",
+      "Horário: 9h. Ponto de encontro: 38-51 Bedford Way, WC1H 0DG, na saída do pátio do Royal National Hotel, junto à parada de ônibus. Duração: cerca de 7 horas.",
+      "38-51 Bedford Way, London WC1H 0DG"
+     ],
+     [
+      "Buckingham Palace",
+      "A troca da guarda acontece às 11h. Não veremos."
+     ],
+     [
+      "St James's Park",
+      "Ao lado do Buckingham Palace."
+     ],
+     [
+      "Abadia de Westminster",
+      "Fotos com a roda-gigante e com o Big Ben.",
+      "Westminster Abbey, London"
+     ],
+     [
+      "National Gallery",
+      "Gratuito. Fecha às 18h."
+     ],
+     [
+      "Tower Bridge de dia",
+      "Atravessar a ponte.",
+      "Tower Bridge, London"
+     ],
+     [
+      "St Paul's Cathedral",
+      "Paga. Apenas ver de fora."
+     ],
+     [
+      "Borough Market",
+      "Para conhecer e comer."
+     ],
+     [
+      "Horizon 22",
+      "Rooftop gratuito, sem reserva."
+     ],
+     [
+      "Piccadilly Circus à noite",
+      "Passeio livre. Se não for no dia anterior, conhecer os arredores.",
+      "Piccadilly Circus, London"
+     ],
+     [
+      "Outernet London",
+      "Apenas se tiver evento gratuito."
+     ]
+    ],
+    "eat": [
+     [
+      "Five Guys (More London Place)",
+      "Pausa para almoço com vista para a Tower Bridge.",
+      "Five Guys, More London Place, London"
+     ],
+     [
+      "Algum pub",
+      "",
+      0
+     ],
+     [
+      "Popeyes",
+      "",
+      0
+     ]
+    ]
+   },
+   {
+    "d": "2026-05-20",
+    "city": "Londres",
+    "q": "London",
+    "title": "Notting Hill, Camden e Kensington",
+    "places": [
+     [
+      "Notting Hill",
+      "Passeio livre. Conhecer a livraria do filme e o Portobello Road Market. Muitas fotos.",
+      "The Notting Hill Bookshop, London"
+     ],
+     [
+      "Little Venice",
+      "Apenas passear."
+     ],
+     [
+      "Abbey Road",
+      "A rua dos Beatles.",
+      "Abbey Road Crossing, London"
+     ],
+     [
+      "Camden Market",
+      "Conhecer e comer por lá: várias lojinhas famosas de comida."
+     ],
+     [
+      "Baker Street",
+      "Endereço do Sherlock Holmes (221B) e do Museu Sherlock Holmes. Não vamos entrar.",
+      "221B Baker Street, London"
+     ],
+     [
+      "Hyde Park e Kensington Palace",
+      "Passeio livre.",
+      "Kensington Palace, London"
+     ],
+     [
+      "Museu de História Natural",
+      "Gratuito. Fecha às 17h50.",
+      "Natural History Museum, London"
+     ],
+     [
+      "Harrods",
+      "Loja de departamento linda para fotos."
+     ],
+     [
+      "Estádio de futebol",
+      "Se der tempo. Possivelmente o do Chelsea, apenas por fora.",
+      "Stamford Bridge, London"
+     ],
+     [
+      "Canary Wharf",
+      "É longe. Verificar se vai dar tempo."
+     ],
+     [
+      "Pub",
+      "Waxy O'Connor's London ou outro.",
+      "Waxy O'Connor's London"
+     ]
+    ],
+    "eat": [
+     [
+      "Poppies Fish & Chips",
+      ""
+     ],
+     [
+      "Meal Deal",
+      "",
+      0
+     ],
+     [
+      "Camden Market",
+      "O maior mercado de rua de Londres, com comidas do mundo todo."
+     ],
+     [
+      "Leadenhall Market",
+      "No centro financeiro. Serviu de cenário para Harry Potter e a Pedra Filosofal."
+     ]
+    ]
+   },
+   {
+    "d": "2026-05-21",
+    "city": "Paris",
+    "q": "Paris",
+    "title": "Torre Eiffel e Sena",
+    "note": "Eurostar às 07:31 de St Pancras, chegada às 10:59 na Gare du Nord. Às 15h: deixar as malas no Airbnb.",
+    "places": [
+     [
+      "Torre Eiffel",
+      "Tirar todas as fotos possíveis, de todos os ângulos.",
+      "Tour Eiffel, Paris"
+     ],
+     [
+      "Trocadéro",
+      "Ir no Carette, se não for muito caro para sentar e tomar um café."
+     ],
+     [
+      "Champs-Élysées",
+      "Rua luxuosa: andar e aproveitar."
+     ],
+     [
+      "Arco do Triunfo",
+      "Perto do Airbnb.",
+      "Arc de Triomphe, Paris"
+     ],
+     [
+      "Passeio de barco pelo Sena ao anoitecer",
+      "Embarque no Port de la Bourdonnais, em frente à Torre, pontão 3 (Bateaux Parisiens). Chegar 20 minutos antes. Tickets valem das 10h às 22h. Ir no pôr do sol ou depois das 21h, quando a torre começa a piscar.",
+      "Bateaux Parisiens, Port de la Bourdonnais, Paris"
+     ],
+     [
+      "Piquenique embaixo da torre piscando",
+      "",
+      "Champ de Mars, Paris"
+     ]
+    ]
+   },
+   {
+    "d": "2026-05-22",
+    "city": "Paris",
+    "q": "Paris",
+    "title": "Louvre, Orsay e Ópera",
+    "places": [
+     [
+      "Museu do Louvre",
+      "Ingressos abrem 90 dias antes. Pegar o primeiro horário do dia.",
+      "Musée du Louvre, Paris"
+     ],
+     [
+      "Praça da Concórdia",
+      "",
+      "Place de la Concorde, Paris"
+     ],
+     [
+      "Museu de Orsay",
+      "Cerca de € 16. Lindo, mas caro. Verificar se dá para comprar na hora.",
+      "Musée d'Orsay, Paris"
+     ],
+     [
+      "28 Rue du Bac",
+      "Espelho na rua para fotos."
+     ],
+     [
+      "Jardim das Tulherias",
+      "Apenas para passear.",
+      "Jardin des Tuileries, Paris"
+     ],
+     [
+      "Ponte Alexandre III",
+      "Lugar lindo, para muitas fotos.",
+      "Pont Alexandre III, Paris"
+     ],
+     [
+      "Ópera Garnier",
+      "Comprar com antecedência. Cerca de € 15.",
+      "Palais Garnier, Paris"
+     ],
+     [
+      "Galeries Lafayette",
+      "Gratuito. De preferência no pôr do sol, no rooftop (entre 21h20 e 21h40). A galeria fecha às 20h.",
+      "Galeries Lafayette Haussmann, Paris"
+     ],
+     [
+      "Jantar no Bouillon Julien",
+      "Bouillons são os restaurantes mais baratos. Reserva para as 19h."
+     ],
+     [
+      "Champs-Élysées à noite",
+      "",
+      "Avenue des Champs-Élysées, Paris"
+     ]
+    ]
+   },
+   {
+    "d": "2026-05-23",
+    "city": "Paris",
+    "q": "Paris",
+    "title": "Quartier Latin e Montmartre",
+    "places": [
+     [
+      "Quartier Latin",
+      "Quarteirão de Emily in Paris: Place de l'Estrapade nº 1, o prédio onde Emily mora.",
+      "Place de l'Estrapade, Paris"
+     ],
+     [
+      "Terra Nera",
+      "O restaurante do Gabriel (Les Deux Compères) na série. Na esquina da Place de l'Estrapade."
+     ],
+     [
+      "La Boulangerie Moderne",
+      "Comer pain au chocolat."
+     ],
+     [
+      "Notre-Dame",
+      "Gratuita. Precisa reservar para entrar sem enfrentar filas.",
+      "Cathédrale Notre-Dame de Paris"
+     ],
+     [
+      "Jardim de Luxemburgo",
+      "Gratuito.",
+      "Jardin du Luxembourg, Paris"
+     ],
+     [
+      "Ladurée",
+      "Comer macarons."
+     ],
+     [
+      "Panthéon",
+      "Só passar na frente, sem entrar."
+     ],
+     [
+      "Linha 6 do metrô",
+      "Vista linda para a torre.",
+      0
+     ],
+     [
+      "Estádio do PSG",
+      "Só se der tempo, foto do lado de fora.",
+      "Parc des Princes, Paris"
+     ],
+     [
+      "Montmartre",
+      "Subir de funicular. Bom para lembrancinhas e bares boêmios. Ir no fim da tarde e ficar até a noite para o pôr do sol. Metrô: estações Anvers, Abbesses ou Lamarck-Caulaincourt."
+     ],
+     [
+      "Sacré-Cœur",
+      "Entrada gratuita. Foto perfeita no Parc Marcel Bleustein-Blanchet (Parc de la Turlure), 1 Rue de la Bonne.",
+      "Basilique du Sacré-Cœur, Paris"
+     ],
+     [
+      "Place du Tertre",
+      ""
+     ],
+     [
+      "Muro do Eu Te Amo",
+      "",
+      "Le Mur des Je t'aime, Paris"
+     ],
+     [
+      "Moulin Rouge",
+      ""
+     ],
+     [
+      "La Maison Rose",
+      ""
+     ],
+     [
+      "Photobooth (cabine de fotos)",
+      "3 Rue André Barsacq, na esquina com a Rue Chappe.",
+      "3 Rue André Barsacq, Paris"
+     ]
+    ]
+   },
+   {
+    "d": "2026-05-24",
+    "city": "Costa Amalfitana",
+    "q": "Sorrento",
+    "title": "Nápoles e chegada em Sorrento",
+    "note": "Voo de Orly às 06:15, chegada em Nápoles às 08:30. Ferry do Molo Beverello às 13h, chegada no porto de Sorrento às 13:45.",
+    "places": [
+     [
+      "Quartieri Spagnoli (Nápoles)",
+      "Tudo do Maradona.",
+      "Quartieri Spagnoli, Napoli"
+     ],
+     [
+      "Galleria Umberto I (Nápoles)",
+      "Igual à de Milão.",
+      "Galleria Umberto I, Napoli"
+     ],
+     [
+      "L'Antica Pizzeria da Michele (Nápoles)",
+      "Famosa pizzaria de Comer, Rezar e Amar. Aperol é muito barato em Nápoles.",
+      "L'Antica Pizzeria da Michele, Napoli"
+     ],
+     [
+      "Piazza Tasso",
+      ""
+     ],
+     [
+      "Basilica di Sant'Antonino",
+      ""
+     ],
+     [
+      "Corso Italia",
+      ""
+     ],
+     [
+      "Porto de Sorrento",
+      "",
+      "Marina Piccola, Sorrento"
+     ],
+     [
+      "Villa Comunale di Sorrento",
+      ""
+     ],
+     [
+      "Lojas de limão siciliano",
+      "Limonoro Fabbrica Liquori.",
+      "Limonoro, Sorrento"
+     ]
+    ],
+    "eat": [
+     [
+      "O'Parrucchiano La Favorita",
+      ""
+     ],
+     [
+      "Frankie's Pizza Bar Sorrento",
+      ""
+     ]
+    ]
+   },
+   {
+    "d": "2026-05-25",
+    "city": "Costa Amalfitana",
+    "q": "Costiera Amalfitana",
+    "title": "De Vespa pela Costa Amalfitana",
+    "note": "Alugar uma Vespa e ir para a Costa Amalfitana.",
+    "places": [
+     [
+      "Positano: Spiaggia Grande",
+      "",
+      "Spiaggia Grande, Positano"
+     ],
+     [
+      "Positano: Via Cristoforo Colombo",
+      "",
+      "Via Cristoforo Colombo, Positano"
+     ],
+     [
+      "Ristorante Bruno",
+      "",
+      "Ristorante Bruno, Positano"
+     ],
+     [
+      "Positano Delicatessen",
+      "Via dei Mulini: para fotos no rooftop.",
+      "Delicatessen Positano, Via dei Mulini"
+     ],
+     [
+      "Fiordo di Furore",
+      "",
+      "Fiordo di Furore"
+     ],
+     [
+      "Amalfi",
+      "Salvatore's fruit stand: 5 minutos de Positano no caminho para Amalfi, dá para parar com a Vespa. Terrazza Duomo.",
+      "Duomo di Amalfi"
+     ],
+     [
+      "Ravello: Villa Cimbrone",
+      "",
+      "Villa Cimbrone, Ravello"
+     ],
+     [
+      "Ravello: Villa Rufolo",
+      "",
+      "Villa Rufolo, Ravello"
+     ],
+     [
+      "Ravello: Palazzo Avino",
+      "",
+      "Palazzo Avino, Ravello"
+     ],
+     [
+      "Minori e Maiori",
+      "Se der tempo.",
+      "Minori, Costiera Amalfitana"
+     ]
+    ],
+    "eat": [
+     [
+      "Il Pianeta del Gelato",
+      "",
+      0
+     ],
+     [
+      "Sobremesa famosa de Amalfi",
+      "Anotada no roteiro como \"Andrea Famosa\", cerca de € 5.",
+      0
+     ]
+    ]
+   },
+   {
+    "d": "2026-05-26",
+    "city": "Costa Amalfitana",
+    "q": "Capri",
+    "title": "Capri",
+    "note": "Ferry de Sorrento para Capri: cerca de 20 a 30 minutos.",
+    "places": [
+     [
+      "Passeio de barco",
+      "Às 10h. Encontro com a tripulação no escritório da HP Travel, no porto de Marina Grande (Via Don Giobbe Ruocco, 51). Chegar 15 minutos antes.",
+      "Via Don Giobbe Ruocco 51, Capri"
+     ],
+     [
+      "Anacapri",
+      "Funicular: cerca de € 4. Ônibus saem de Marina Grande e da Piazzetta e levam uns 15 minutos (€ 2,40 por trecho). Passeio livre.\nMonte Solaro: ponto mais alto da ilha, de teleférico a partir de Anacapri (12 minutos, cerca de € 14 ida e volta, das 9h30 às 17h em maio).",
+      "Anacapri"
+     ],
+     [
+      "Marina Piccola",
+      "",
+      "Marina Piccola, Capri"
+     ],
+     [
+      "Piazzetta de Capri",
+      "",
+      "Piazza Umberto I, Capri"
+     ],
+     [
+      "Via Camerelle",
+      "A rua mais sofisticada de Capri, com lojas de grife."
+     ],
+     [
+      "Jardins de Augusto e Via Krupp",
+      "Entrada paga, cerca de € 2,50. Aberto das 10h às 16h30.",
+      "Giardini di Augusto, Capri"
+     ],
+     [
+      "Certosa di San Giacomo",
+      ""
+     ]
+    ],
+    "eat": [
+     [
+      "Buonocore Gelateria",
+      "Gelato."
+     ]
+    ]
+   },
+   {
+    "d": "2026-05-27",
+    "city": "Roma",
+    "q": "Roma",
+    "title": "Chegada e centro histórico",
+    "note": "Check-out em Sorrento às 10h. Ferry às 10h para Nápoles e trem às 12:10, chegada em Roma Termini às 13:20.",
+    "places": [
+     [
+      "Fontana di Trevi",
+      "Ir logo ao chegar. Pela hora deve estar cheia: se for o caso, voltar outro dia bem cedo."
+     ],
+     [
+      "Igreja de Santo Inácio de Loyola",
+      "Gratuita. A igreja do espelho, com filas enormes. Cerca de € 1 para usar o espelho.",
+      "Chiesa di Sant'Ignazio di Loyola, Roma"
+     ],
+     [
+      "Pantheon",
+      ""
+     ],
+     [
+      "Osteria da Fortunata",
+      ""
+     ],
+     [
+      "Piazza Navona",
+      ""
+     ],
+     [
+      "Campo de' Fiori",
+      ""
+     ],
+     [
+      "Kiko Milano",
+      "",
+      0
+     ],
+     [
+      "Coliseu à noite",
+      "",
+      "Colosseo, Roma"
+     ],
+     [
+      "Trastevere",
+      ""
+     ]
+    ]
+   },
+   {
+    "d": "2026-05-28",
+    "city": "Roma",
+    "q": "Roma",
+    "title": "Coliseu e Trastevere à noite",
+    "places": [
+     [
+      "Coliseu e Fórum Romano",
+      "Agendado para as 08:45. Café no Oppio Caffè e fotos do outro lado da rua. Coliseu: entrada para visitantes individuais. Fórum: entrada pela Via Sacra, fila para portadores de ingresso à direita. Ingressos nominativos. Chegar 15 minutos antes.",
+      "Colosseo, Roma"
+     ],
+     [
+      "Monumento a Vítor Emanuel II",
+      "",
+      "Altare della Patria, Roma"
+     ],
+     [
+      "Piazza Venezia",
+      ""
+     ],
+     [
+      "Ponte Fabricio",
+      ""
+     ],
+     [
+      "Ilha Tiberina",
+      "",
+      "Isola Tiberina, Roma"
+     ],
+     [
+      "Jantar no Tonnarello",
+      "Verificar se precisa reservar.",
+      "Tonnarello, Trastevere, Roma"
+     ],
+     [
+      "Fontana dell'Acqua Paola",
+      ""
+     ],
+     [
+      "Ponte Sisto",
+      ""
+     ],
+     [
+      "Piazza Trilussa",
+      "Danças e músicas a partir das 21h."
+     ]
+    ]
+   },
+   {
+    "d": "2026-05-29",
+    "city": "Florença",
+    "q": "Firenze",
+    "title": "Bate e volta em Florença",
+    "note": "Ida: 08:05 de Roma Tiburtina, chegada às 09:31. Volta: 19:28 de Firenze S.M. Novella, chegada às 20:54.",
+    "places": [
+     [
+      "Cooking class",
+      "Às 10:30. Ponto de encontro: restaurante Rosso Crudo, Via dei Servi 85R (número vermelho). Chegar 5 minutos antes.",
+      "Via dei Servi 85r, Firenze"
+     ],
+     [
+      "Vinho nas janelinhas",
+      "Espalhadas pela cidade.",
+      0
+     ],
+     [
+      "Duomo di Santa Maria del Fiore",
+      ""
+     ],
+     [
+      "Piazza della Signoria",
+      ""
+     ],
+     [
+      "Palazzo Vecchio",
+      "Cerca de € 22. Aberto de sexta a quarta das 9h às 22h, e quinta das 9h às 14h."
+     ],
+     [
+      "Ponte alle Grazie",
+      ""
+     ],
+     [
+      "Galleria degli Uffizi",
+      "Cerca de € 23. Onde estão os famosos quadros de Da Vinci."
+     ],
+     [
+      "Museu da Gucci",
+      "Cerca de € 5. Comprar no dia.",
+      "Gucci Garden, Firenze"
+     ],
+     [
+      "Piazzale Michelangelo",
+      "Para o pôr do sol, dependendo do horário."
+     ]
+    ],
+    "eat": [
+     [
+      "All'Antico Vinaio",
+      "Sanduíche, cerca de € 8."
+     ],
+     [
+      "Trattoria Zà Zà",
+      "Nhoque trufado."
+     ],
+     [
+      "Osteria Santo Spirito",
+      ""
+     ]
+    ]
+   },
+   {
+    "d": "2026-05-30",
+    "city": "Roma",
+    "q": "Roma",
+    "title": "Vaticano e Piazza di Spagna",
+    "places": [
+     [
+      "Vaticano e Capela Sistina",
+      "08:00. Ir direto para a entrada dos Museus do Vaticano, na Viale Vaticano. Usar a entrada preferencial da GetYourGuide, mostrar o ingresso ao segurança e depois escanear na bilheteria \"Cassa Online e Gruppi\". Não chegar fora do horário.",
+      "Musei Vaticani, Roma"
+     ],
+     [
+      "Pastasciutta",
+      "Almoço barato perto do Vaticano."
+     ],
+     [
+      "Castelo Sant'Angelo",
+      "É pago. Ver apenas de fora.",
+      "Castel Sant'Angelo, Roma"
+     ],
+     [
+      "Jardins da Villa Borghese",
+      "Tem passeio de barquinho: verificar o valor na hora.",
+      "Villa Borghese, Roma"
+     ],
+     [
+      "Piazza del Popolo",
+      ""
+     ],
+     [
+      "Piazza di Spagna",
+      ""
+     ],
+     [
+      "Via dei Condotti",
+      ""
+     ],
+     [
+      "Via del Corso",
+      "Kiko Milano e outras lojas."
+     ],
+     [
+      "Final da Champions League",
+      "Assistir em algum lugar.",
+      0
+     ]
+    ]
+   },
+   {
+    "d": "2026-05-31",
+    "city": "Roma",
+    "q": "Roma",
+    "title": "Volta para casa",
+    "note": "Check-out às 10h. Voo às 13:05: chegar no aeroporto com pelo menos 2 horas de antecedência. Chegada ao Rio às 23:30.",
+    "places": []
+   }
+  ]
+ },
+ "E27": {
+  "id": "eurotrip-2027",
+  "name": "Eurotrip 2027",
+  "status": "Planejamento",
+  "start": "2027-04-22",
+  "end": "2027-05-09",
+  "cities": [
+   "Amsterdã",
+   "Bruxelas",
+   "Bruges",
+   "Milão",
+   "Lago di Como",
+   "St. Moritz",
+   "Veneza",
+   "Londres",
+   "Manchester"
+  ],
+  "countries": [
+   "528",
+   "056",
+   "380",
+   "756",
+   "826"
+  ],
+  "pts": [
+   "lon",
+   "ams",
+   "bru",
+   "brg",
+   "mil",
+   "com",
+   "stm",
+   "ven",
+   "man"
+  ],
+  "transport": [
+   {
+    "d": "2027-04-22",
+    "a": "Rio",
+    "b": "Londres",
+    "mode": "Avião",
+    "t": "chegada em 23/04"
+   },
+   {
+    "d": "2027-05-09",
+    "a": "Londres",
+    "b": "Rio",
+    "mode": "Avião",
+    "t": ""
+   }
+  ],
+  "checklist": [
+   {
+    "g": "Passagens",
+    "items": [
+     [
+      "Passagens internacionais (ida e volta por Londres)",
+      1
+     ]
+    ]
+   },
+   {
+    "g": "Hospedagens",
+    "items": []
+   },
+   {
+    "g": "Transportes internos",
+    "items": []
+   },
+   {
+    "g": "Ingressos",
+    "items": []
+   }
+  ],
+  "planNote": "Roteiro em aberto: a ordem das cidades e os dias de cada uma ainda não estão definidos. Adicione lugares em cada dia conforme for decidindo."
+ }
+}
