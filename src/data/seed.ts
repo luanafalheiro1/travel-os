@@ -1,6 +1,7 @@
 import legacy from './legacy.json';
 import type { Category, DB, Day, Item, Leg, Stay, Trip } from '../types';
 import { uid } from '../lib/util';
+import { LONDON_CHECK, london2027Days, london2027Ideas, london2027Legs } from './london2027';
 
 /* Converte o roteiro importado do documento (primeira versão) para o modelo atual. */
 
@@ -80,6 +81,8 @@ function eurotrip2027(): Trip {
     const iso = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
     days.push({ date: iso, city: '', items: [] });
   }
+  const ld = london2027Days();
+  for (const d of ld) { const k = days.findIndex(x => x.date === d.date); if (k >= 0) days[k] = d; }
   return {
     id: 'eurotrip-2027', name: 'Eurotrip 2027', status: 'Planejamento', start: '2027-04-22', end: '2027-05-09',
     cities: ['Londres', 'Amsterdã', 'Bruxelas', 'Bruges', 'Milão', 'Lago di Como', 'St. Moritz', 'Veneza', 'Manchester'],
@@ -87,15 +90,18 @@ function eurotrip2027(): Trip {
     days,
     legs: [
       { id: uid(), date: '2027-04-22', from: 'Rio', to: 'Londres', mode: 'Avião', arrDate: '2027-04-23', booked: true },
+      ...london2027Legs(),
       { id: uid(), date: '2027-05-09', from: 'Londres', to: 'Rio', mode: 'Avião', booked: true },
     ],
+    ideas: london2027Ideas(),
     stays: [],
     checklist: checklist([
       { g: 'Passagens', items: [['Passagens internacionais (ida e volta por Londres)', 1]] },
       { g: 'Hospedagens', items: [] }, { g: 'Transportes internos', items: [] }, { g: 'Ingressos', items: [] },
+      { g: 'Londres e Manchester: reservar antes', items: LONDON_CHECK },
     ]),
     tips: [], apps: [], journal: {},
-    planNote: 'A ordem das cidades e os dias de cada uma ainda não estão definidos. Escolha a cidade de cada dia e adicione os lugares conforme for decidindo.',
+    planNote: 'Londres e Manchester (02 a 09/05) já estão planejados dia a dia. Os dias de 22/04 a 01/05 (Amsterdã, Bélgica e Itália) ainda estão em aberto.',
   };
 }
 

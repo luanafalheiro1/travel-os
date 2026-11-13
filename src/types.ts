@@ -1,12 +1,13 @@
 export type Status = 'Wishlist' | 'Planejamento' | 'Reservada' | 'Em andamento' | 'Concluída' | 'Arquivada';
 export const STATUSES: Status[] = ['Wishlist', 'Planejamento', 'Reservada', 'Em andamento', 'Concluída', 'Arquivada'];
 
-export type Category = 'atracao' | 'comida' | 'compras' | 'passeio' | 'transporte' | 'outro';
+export type Category = 'atracao' | 'comida' | 'compras' | 'passeio' | 'foto' | 'transporte' | 'outro';
 export const CATEGORIES: { id: Category; label: string }[] = [
   { id: 'atracao', label: 'Atração' },
   { id: 'comida', label: 'Comida' },
   { id: 'passeio', label: 'Passeio' },
   { id: 'compras', label: 'Compras' },
+  { id: 'foto', label: 'Só foto' },
   { id: 'transporte', label: 'Transporte' },
   { id: 'outro', label: 'Outro' },
 ];
@@ -34,6 +35,8 @@ export interface Item extends PlaceRef {
   duration?: number;  // minutos
   cost?: string;
   category: Category;
+  /** coordenada aproximada, só para estimar deslocamentos até o Google localizar o lugar */
+  approx?: Geo;
   done?: boolean;
   fav?: boolean;
 }

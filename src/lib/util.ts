@@ -42,3 +42,19 @@ export function tzOffsetHours(tz: string) {
 export const norm = (s: string) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
 
 export function cls(...a: (string | false | null | undefined)[]) { return a.filter(Boolean).join(' '); }
+
+/* ---------- deslocamento estimado entre dois pontos ---------- */
+export function distKm(a: { lat: number; lng: number }, b: { lat: number; lng: number }) {
+  const r = Math.PI / 180, R = 6371;
+  const dLat = (b.lat - a.lat) * r, dLng = (b.lng - a.lng) * r;
+  const h = Math.sin(dLat / 2) ** 2 + Math.cos(a.lat * r) * Math.cos(b.lat * r) * Math.sin(dLng / 2) ** 2;
+  return 2 * R * Math.asin(Math.sqrt(h));
+}
+/** Estimativa simples: a pé até ~2 km; acima disso, transporte público. */
+export function hop(a: { lat: number; lng: number }, b: { lat: number; lng: number }) {
+  const km = distKm(a, b) * 1.3; // ruas não são linha reta
+  if (km < 0.08) return { mode: 'walk' as const, min: 1, km };
+  if (km <= 2.2) return { mode: 'walk' as const, min: Math.max(1, Math.round(km / 4.8 * 60)), km };
+  return { mode: 'transit' as const, min: Math.round(12 + km * 2.6), km };
+}
+export const fmtKm = (km: number) => km < 1 ? `${Math.round(km * 100) * 10} m` : `${km.toFixed(1).replace('.', ',')} km`;

@@ -9,7 +9,7 @@ import type { Item, Leg, Stay, Trip } from '../../types';
 import GMap, { type MapMarker } from '../../components/GMap';
 import { GPhoto, LocalPhoto, longDate } from '../../components/bits';
 import { PlaceDrawer } from '../../components/places';
-import { DAY_COLORS, conflicts, locateItems } from './Itinerary';
+import { DAY_COLORS, conflicts, coord, locateItems } from './Itinerary';
 import { useToast } from '../../App';
 
 /* ================= Calendário da viagem ================= */
@@ -55,8 +55,8 @@ export function TripMap({ t }: { t: Trip }) {
   const [loc, setLoc] = useState<{ n: number; total: number } | null>(null);
   const cities = [...new Set(t.days.map(d => d.city).filter(c => c && c !== 'Rio'))];
   const days = t.days.map((d, i) => ({ d, i })).filter(({ d }) => !city || d.city === city);
-  const markers: MapMarker[] = days.flatMap(({ d, i }) => d.items.filter(x => x.geo).map(x => ({ id: x.id, pos: x.geo!, title: `${fmtShort(d.date)} · ${x.name}`, label: String(pd(d.date).getDate()), color: x.done ? '#94A3B8' : DAY_COLORS[i % DAY_COLORS.length] })));
-  if (!city) t.cities.forEach(c => { const ci = cityInfo(c); if (ci && !days.some(({ d }) => d.city === c && d.items.some(x => x.geo))) markers.push({ id: 'city:' + c, pos: { lat: ci.lat, lng: ci.lng }, title: c, color: '#0F172A' }); });
+  const markers: MapMarker[] = days.flatMap(({ d, i }) => d.items.filter(x => coord(x)).map(x => ({ id: x.id, pos: coord(x)!, title: `${fmtShort(d.date)} · ${x.name}`, label: String(pd(d.date).getDate()), color: x.done ? '#94A3B8' : DAY_COLORS[i % DAY_COLORS.length] })));
+  if (!city) t.cities.forEach(c => { const ci = cityInfo(c); if (ci && !days.some(({ d }) => d.city === c && d.items.some(x => coord(x)))) markers.push({ id: 'city:' + c, pos: { lat: ci.lat, lng: ci.lng }, title: c, color: '#0F172A' }); });
   const missing = days.flatMap(({ d }) => d.items.filter(x => !x.geo && x.q !== null).map(item => ({ day: d.date, item })));
   const all = days.flatMap(({ d }) => d.items.map(x => ({ x, d })));
   return (
@@ -73,17 +73,17 @@ export function TripMap({ t }: { t: Trip }) {
               setLoc({ n: 0, total: missing.length });
               await locateItems(t, missing, k => setLoc({ n: k, total: missing.length }));
               setLoc(null); toast('Pronto: lugares localizados no mapa.');
-            }}>{loc ? <><Loader2 className="spin" size={14} />{loc.n} de {loc.total}…</> : <><LocateFixed size={14} />Localizar {missing.length} lugares no mapa</>}</button>
+            }}>{loc ? <><Loader2 className="spin" size={14} />{loc.n} de {loc.total}…</> : <><LocateFixed size={14} />Posição exata de {missing.length} lugares</>}</button>
           )}
         </div>
         <GMap markers={markers} cluster={markers.length > 60} height={560} selected={sel} onSelect={id => { setSel(id); const f = all.find(a => a.x.id === id); if (f) setOpen(f.x); }} />
-        {missing.length > 0 && status === 'ready' && !loc && <p className="muted small pad-sm">Os lugares que vieram do seu roteiro ainda não têm posição. O botão acima busca cada um no Google uma única vez e guarda o resultado.</p>}
+        {missing.length > 0 && status === 'ready' && !loc && <p className="muted small pad-sm">Os pinos de alguns lugares estão em posição aproximada. O botão acima busca cada um no Google uma única vez, guarda a posição exata e libera fotos e avaliações.</p>}
       </div>
       <div className="card tmap-list">
         {days.filter(({ d }) => d.items.length).map(({ d, i }) => (
           <div key={d.date}>
             <div className="tmap-day"><span className="dot" style={{ background: DAY_COLORS[i % DAY_COLORS.length] }} />{fmtShort(d.date)}{d.city ? ' · ' + d.city : ''}</div>
-            {d.items.map(x => <button key={x.id} className={cls('tmap-it', sel === x.id && 'on', !x.geo && 'nogeo')} onClick={() => { setSel(x.id); setOpen(x); }}>{x.time && <b>{x.time}</b>}{x.name}</button>)}
+            {d.items.map(x => <button key={x.id} className={cls('tmap-it', sel === x.id && 'on', !coord(x) && 'nogeo')} onClick={() => { setSel(x.id); setOpen(x); }}>{x.time && <b>{x.time}</b>}{x.name}</button>)}
           </div>
         ))}
         {!all.length && <p className="muted pad-sm">Nenhum lugar no roteiro ainda.</p>}

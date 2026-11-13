@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { Fragment, useEffect, useMemo, useRef, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import {
   DndContext, DragOverlay, KeyboardSensor, PointerSensor, TouchSensor, closestCenter, pointerWithin, useDroppable, useSensor, useSensors,
@@ -6,22 +6,24 @@ import {
 } from '@dnd-kit/core';
 import { SortableContext, arrayMove, sortableKeyboardCoordinates, useSortable, verticalListSortingStrategy } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
-import { AlertTriangle, ArrowDownUp, Clock, ExternalLink, GripVertical, Lightbulb, Loader2, LocateFixed, MoreHorizontal, Route, Star, Trash2, Train } from 'lucide-react';
+import { AlertTriangle, ArrowDownUp, Clock, ExternalLink, Footprints, TrainFront, GripVertical, Lightbulb, Loader2, LocateFixed, MoreHorizontal, Route, Star, Trash2, Train } from 'lucide-react';
 import { updateTrip } from '../../lib/store';
 import { locate, useMaps } from '../../lib/gmaps';
 import { cityInfo } from '../../data/cities';
-import { WD, MO, cls, fmtShort, gmPlace, pd, toMin, fromMin, today } from '../../lib/util';
+import { WD, MO, cls, fmtKm, fmtShort, gmPlace, hop, pd, toMin, fromMin, today } from '../../lib/util';
 import { CATEGORIES, type Day, type Item, type Trip } from '../../types';
 import { PlaceDrawer, PlaceSearch, itemFrom } from '../../components/places';
 import GMap from '../../components/GMap';
-import { longDate } from '../../components/bits';
+import { GPhoto, longDate } from '../../components/bits';
 import { useToast } from '../../App';
 
 // Prioriza o que está embaixo do dedo/cursor (dias e caixa de ideias); senão, o item mais próximo.
 const collide: CollisionDetection = args => { const hit = pointerWithin(args); return hit.length ? hit : closestCenter(args); };
 
+export const coord = (i: Item) => i.geo || i.approx;
+
 export const DAY_COLORS = ['#4F46E5', '#0EA5E9', '#16A34A', '#F59E0B', '#EC4899', '#7C3AED', '#0F766E', '#DC2626', '#2563EB', '#65A30D'];
-const CAT_COLOR: Record<string, string> = { atracao: '#4F46E5', comida: '#F59E0B', passeio: '#16A34A', compras: '#EC4899', transporte: '#0EA5E9', outro: '#64748B' };
+const CAT_COLOR: Record<string, string> = { atracao: '#4F46E5', comida: '#F59E0B', passeio: '#16A34A', compras: '#EC4899', transporte: '#0EA5E9', outro: '#64748B', foto: '#0891B2' };
 
 export function conflicts(items: Item[]) {
   const timed = items.filter(i => i.time).map(i => ({ i, s: toMin(i.time)!, e: toMin(i.time)! + (i.duration || 60) })).sort((a, b) => a.s - b.s);
@@ -59,14 +61,14 @@ export async function locateItems(t: Trip, items: { day?: string; item: Item }[]
 
 /** Reordena os itens sem horário pelo vizinho mais próximo, mantendo os com horário. */
 function byProximity(items: Item[]): Item[] {
-  const fixed = items.filter(i => i.time || !i.geo);
-  const free = items.filter(i => !i.time && i.geo);
+  const fixed = items.filter(i => i.time || !coord(i));
+  const free = items.filter(i => !i.time && coord(i));
   if (free.length < 3) return items;
   const out: Item[] = [free.shift()!];
   while (free.length) {
-    const last = out[out.length - 1].geo!;
+    const last = coord(out[out.length - 1])!;
     let best = 0, bd = Infinity;
-    free.forEach((x, k) => { const d = (x.geo!.lat - last.lat) ** 2 + ((x.geo!.lng - last.lng) * Math.cos(last.lat * Math.PI / 180)) ** 2; if (d < bd) { bd = d; best = k; } });
+    free.forEach((x, k) => { const g = coord(x)!; const d = (g.lat - last.lat) ** 2 + ((g.lng - last.lng) * Math.cos(last.lat * Math.PI / 180)) ** 2; if (d < bd) { bd = d; best = k; } });
     out.push(free.splice(best, 1)[0]);
   }
   return [...fixed.filter(i => i.time), ...out, ...fixed.filter(i => !i.time)];
@@ -86,7 +88,7 @@ function DayChip({ d, i, active, onClick, count }: { d: Day; i: number; active: 
   );
 }
 
-function Row({ it, t, day, bad, onOpen, color, idx }: { it: Item; t: Trip; day: string; bad: boolean; onOpen: () => void; color: string; idx: number }) {
+function Row({ it, t, day, bad, onOpen, color, idx, photo }: { it: Item; t: Trip; day: string; bad: boolean; onOpen: () => void; color: string; idx: number; photo: boolean }) {
   const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({ id: it.id });
   const [menu, setMenu] = useState(false);
   const set = (fn: (x: Item) => void) => updateTrip(t.id, tr => { const x = tr.days.find(d => d.date === day)?.items.find(y => y.id === it.id); if (x) fn(x); });
@@ -99,13 +101,14 @@ function Row({ it, t, day, bad, onOpen, color, idx }: { it: Item; t: Trip; day: 
         {it.time && it.duration ? <small>até {fromMin(toMin(it.time)! + it.duration)}</small> : null}
       </div>
       <button className="it-main" onClick={onOpen}>
-        <span className="it-name">{it.geo && <span className="it-num" style={{ background: color }}>{idx}</span>}{it.name}{it.fav && <Star size={13} fill="#F59E0B" color="#F59E0B" />}</span>
+        <span className="it-name">{idx > 0 && <span className="it-num" style={{ background: color }}>{idx}</span>}{it.name}{it.fav && <Star size={13} fill="#F59E0B" color="#F59E0B" />}</span>
         {it.note && <span className="it-note">{it.note}</span>}
         <span className="it-meta">
           <span className="cat" style={{ color: CAT_COLOR[it.category], background: CAT_COLOR[it.category] + '14' }}>{CATEGORIES.find(c => c.id === it.category)?.label}</span>
           {bad && <span className="tag warn"><AlertTriangle size={12} />Conflito de horário</span>}
         </span>
       </button>
+      {photo && it.q !== null && <GPhoto q={it.placeId ? `${it.name}, ${it.address || ''}` : (it.q || it.name)} className="it-photo" width={240} />}
       <div className="it-act">
         <a className="icon-btn" href={it.mapsUrl || gmPlace(it.q || it.name, it.placeId)} target="_blank" rel="noopener" aria-label="Abrir no Google Maps" title="Abrir no Google Maps"><ExternalLink size={16} /></a>
         <button className="icon-btn" onClick={() => setMenu(!menu)} aria-label="Mais opções"><MoreHorizontal size={16} /></button>
@@ -203,10 +206,13 @@ export default function Itinerary({ t }: { t: Trip }) {
   };
 
   let n = 0;
-  const numbered = day.items.map(it => ({ it, num: it.geo ? ++n : 0 }));
-  const markers = numbered.filter(x => x.it.geo).map(x => ({ id: x.it.id, pos: x.it.geo!, title: `${x.num}. ${x.it.name}`, label: String(x.num), color: x.it.done ? '#94A3B8' : color }));
+  const numbered = day.items.map(it => ({ it, num: coord(it) ? ++n : 0 }));
+  const markers = numbered.filter(x => coord(x.it)).map(x => ({ id: x.it.id, pos: coord(x.it)!, title: `${x.num}. ${x.it.name}`, label: String(x.num), color: x.it.done ? '#94A3B8' : color }));
   const missing = day.items.filter(i => !i.geo && i.q !== null);
   const routes = dayRouteLinks(day.items);
+  const pts = day.items.map(coord).filter(Boolean) as { lat: number; lng: number }[];
+  let walkKm = 0, moveMin = 0;
+  for (let k = 1; k < pts.length; k++) { const h = hop(pts[k - 1], pts[k]); moveMin += h.min; if (h.mode === 'walk') walkKm += h.km; }
 
   return (
     <DndContext sensors={sensors} collisionDetection={collide} onDragStart={onStart} onDragEnd={onEnd} onDragCancel={() => setDragging(null)}>
@@ -242,11 +248,24 @@ export default function Itinerary({ t }: { t: Trip }) {
             <button className="btn btn-sm" disabled={day.items.filter(i => !i.time && i.geo).length < 3} onClick={() => { setDay(d => { d.items = byProximity(d.items); }); toast('Reordenei os lugares sem horário pela proximidade.'); }}><ArrowDownUp size={14} />Otimizar trajeto</button>
             {routes.map((u, k) => <a key={u} className="btn btn-sm" href={u} target="_blank" rel="noopener"><Route size={14} />Rota no Google Maps{routes.length > 1 ? ` ${k + 1}/${routes.length}` : ''}</a>)}
           </div>
+          {pts.length > 1 && <p className="muted small row"><Footprints size={14} />Neste dia: ≈ {fmtKm(walkKm)} a pé e ≈ {Math.round(moveMin / 5) * 5} min de deslocamento no total (estimativa).</p>}
           {bad.size > 0 && <p className="tag warn" style={{ alignSelf: 'start' }}><AlertTriangle size={14} />Há horários sobrepostos neste dia. Confira os itens marcados.</p>}
 
           <SortableContext items={day.items.map(i => i.id)} strategy={verticalListSortingStrategy}>
             <ul className="items">
-              {numbered.map(({ it, num }) => <Row key={it.id} it={it} t={t} day={day.date} bad={bad.has(it.id)} onOpen={() => setOpen(it)} color={color} idx={num} />)}
+              {numbered.map(({ it, num }, k) => {
+                const prev = k > 0 ? numbered.slice(0, k).reverse().find(x => coord(x.it))?.it : undefined;
+                const a = prev && coord(prev), b = coord(it);
+                const h = a && b ? hop(a, b) : null;
+                const dir = prev && 'https://www.google.com/maps/dir/?api=1&travelmode=' + (h?.mode === 'walk' ? 'walking' : 'transit') +
+                  '&origin=' + encodeURIComponent(prev.geo ? `${prev.geo.lat},${prev.geo.lng}` : (prev.q || prev.name)) + '&destination=' + encodeURIComponent(it.geo ? `${it.geo.lat},${it.geo.lng}` : (it.q || it.name));
+                return (
+                  <Fragment key={it.id}>
+                    {h && <li className="hop"><span className="hop-line" /><span>{h.mode === 'walk' ? <Footprints size={14} /> : <TrainFront size={14} />}≈ {h.min} min {h.mode === 'walk' ? 'a pé' : 'de metrô ou ônibus'} · {fmtKm(h.km)}</span><a href={dir} target="_blank" rel="noopener">trajeto exato ↗</a></li>}
+                    <Row it={it} t={t} day={day.date} bad={bad.has(it.id)} onOpen={() => setOpen(it)} color={color} idx={num} photo={status === 'ready'} />
+                  </Fragment>
+                );
+              })}
             </ul>
           </SortableContext>
           {!day.items.length && <p className="muted center" style={{ padding: 16 }}>Nada planejado para este dia ainda. Busque um lugar abaixo ou arraste uma ideia para cá.</p>}
