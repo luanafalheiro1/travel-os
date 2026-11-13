@@ -122,7 +122,7 @@ const DAYS: { date: string; city: string; title: string; note?: string; q: strin
   },
   {
     date: '2027-05-08', city: 'Londres', q: L, title: 'Compras e jogo da Premier League',
-    note: 'Fulham x Ipswich no Craven Cottage, marcado para 08/05. Horário a confirmar: a TV pode mudar até para domingo 09/05. Comprar ingresso só na bilheteria oficial, depois de confirmado.',
+    note: 'Fulham x Ipswich no Craven Cottage, marcado para 08/05. Horário a confirmar: a TV pode mudar até para domingo 09/05. Comprar ingresso só na bilheteria oficial, depois de confirmado. Saída do studio até 11h: deixar as malas num guarda-volumes no centro durante o dia e, à noite, seguir para o ibis Heathrow (voo de volta às 07:55).',
     items: [
       ['Baker Street', 51.5226, -0.1571, 'foto', { time: '09:30', note: 'Só foto.', q: 'Baker Street Station, London' }],
       ['Daunt Books Marylebone', 51.5203, -0.1520, 'compras'],
@@ -136,12 +136,10 @@ const DAYS: { date: string; city: string; title: string; note?: string; q: strin
     ],
   },
   {
-    date: '2027-05-09', city: 'Londres', q: L, title: 'Manhã livre e volta',
-    note: 'Depende do horário do voo. Chegar ao aeroporto 3 horas antes.',
+    date: '2027-05-09', city: 'Londres', q: L, title: 'Voo de volta',
+    note: 'Iberia IB3643 às 07:55 no T5, com conexão em Madri e chegada ao Rio às 17:35. Na volta há uma mala despachada por pessoa.',
     items: [
-      ['Columbia Road Flower Market', 51.5293, -0.0716, 'passeio', { time: '09:00', note: 'Feira de flores de domingo.' }],
-      ['Brick Lane Vintage Market', 51.5219, -0.0718, 'compras', { q: 'The Brick Lane Vintage Market, London' }],
-      ['Princelet Street', 51.5197, -0.0724, 'foto', { note: 'Só foto: casas georgianas coloridas em Spitalfields.' }],
+      ['Heathrow Terminal 5', 51.4723, -0.4885, 'transporte', { time: '05:15', note: 'Saída do ibis Heathrow por volta das 05:00. Despachar as malas no balcão da Iberia.', q: 'Heathrow Terminal 5' }],
     ],
   },
 ];
@@ -162,6 +160,9 @@ const IDEAS: P[] = [
   ['The Prospect of Whitby', 51.5070, -0.0510, 'comida', { note: 'Um dos pubs mais antigos da beira do Tâmisa, em Wapping.', q: 'The Prospect of Whitby, Wapping' }],
   ['Brixton', 51.4626, -0.1145, 'passeio', { q: 'Brixton Village, London' }],
   ['Daunt Books Notting Hill', 51.5145, -0.2029, 'compras'],
+  ['Columbia Road Flower Market', 51.5293, -0.0716, 'passeio', { note: 'Feira de flores, só aos domingos. O único domingo em Londres é 02/05, dia da chegada.' }],
+  ['Brick Lane Vintage Market', 51.5219, -0.0718, 'compras', { q: 'The Brick Lane Vintage Market, London' }],
+  ['Princelet Street', 51.5197, -0.0724, 'foto', { note: 'Só foto: casas georgianas coloridas em Spitalfields.' }],
   ['Universidade de Oxford', 51.7548, -1.2544, 'passeio', { note: 'Bate-volta possível, no lugar do dia de Greenwich.', q: 'University of Oxford' }],
 ];
 

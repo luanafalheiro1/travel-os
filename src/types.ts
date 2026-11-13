@@ -122,5 +122,7 @@ export interface DB {
   photos: Photo[];
   settings: Settings;
   /** cidades localizadas pelo Google ao criar viagens */
+  /** atualizações de dados já aplicadas neste aparelho */
+  patches?: string[];
   customCities?: Record<string, { lat: number; lng: number; tz: string; country: string; q: string }>;
 }

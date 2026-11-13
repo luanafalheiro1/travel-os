@@ -2,6 +2,7 @@ import { useSyncExternalStore } from 'react';
 import { get as idbGet, set as idbSet, del as idbDel } from 'idb-keyval';
 import type { DB, Trip } from '../types';
 import { seed } from '../data/seed';
+import { patch2027 } from '../data/europa2027';
 
 const KEY = 'travelos:db:v1';
 
@@ -10,7 +11,7 @@ function load(): DB {
     const raw = localStorage.getItem(KEY);
     if (raw) {
       const db = JSON.parse(raw) as DB;
-      if (db && db.version === 1 && Array.isArray(db.trips)) return { ...seed(), ...db, settings: { ...seed().settings, ...db.settings } };
+      if (db && db.version === 1 && Array.isArray(db.trips)) return patch2027({ ...seed(), ...db, settings: { ...seed().settings, ...db.settings } });
     }
   } catch { /* armazenamento indisponível */ }
   return seed();
